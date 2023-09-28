@@ -31,21 +31,16 @@ Before you begin, ensure you have the following prerequisites:
 
 2. Install the required Python packages:
 
-   ```bash
-   cd etl-pipeline
-   pip install -r requirements.txt
-   ```
+3. Configure your AWS credentials and Snowflake connection details in the `airflow_emr_s3_snowflake_setup.txt` file, respectively.
 
-3. Configure your AWS credentials and Snowflake connection details in the `config.json` and `snowflake_config.json` files, respectively.
-
-4. Update the EMR Crawler configuration in `emr_crawler.py` to match your data source and catalog preferences.
+4. Update the EMR Crawler configuration in `airflow_emr_spark_s3_snowflake.py` to match your data source and catalog preferences.
 
 ## Usage
 
 1. Run the ETL pipeline:
 
    ```bash
-   python src/etl.py
+   python airflow_emr_spark_s3_snowflake.py
    ```
 
    This will extract data from the specified S3 bucket, create an EMR Crawler to catalog the data, and transfer the cataloged data to Snowflake.
